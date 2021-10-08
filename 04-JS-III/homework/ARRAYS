@@ -1,0 +1,4 @@
+ARRAYS:
+Los arrays son un objeto de JavaScript que almacenan informacion de manera ordenada en una lista y por decir de manera ordenada no me refiero a que ordenen los datos sino que los va guardando por indices. digamos el 0,1,2,...etc asi, si uno ingresa un valor al array quedaria en el indice cero, si vamos agregando mas y mas valores iran acomodandose en el 1, en el 2 y asi sucesivamente; los arrays tienen tamaño y este puede ser el numero de valores que tenemos dentro del array o puede ser un tamaño que nosotros asignemos, puede ser que asignemos un tamaño menor al de los valores que tenemos dentro y esto haria un corte en los valores solo guardando hasta el tamaño que nosotros le asignemos, la forma de hacer un array es:
+var array = [10]
+En este momento le estamos diciendo al array que tomara un tamaño de 10 indices, teniendo en cuenta que los indices siempre comienzan del 0 a contar como un valor.
