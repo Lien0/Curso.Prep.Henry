@@ -23,6 +23,7 @@ En esta lección cubriremos:
 * Bucles `for`
 * `arguments`
 
+
 <iframe src="https://player.vimeo.com/video/424318886" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 ## Undefined y null
@@ -30,7 +31,8 @@ En esta lección cubriremos:
 Hay un par de objetos Javascript que realmente no encajan en ningún tipo de dato. Esos son los valores `undefined` y` null`. Obtendrás `undefined` cuando busques _algo_ que no existe, como una variable que aún no tiene un valor. `undefined` simplemente significa que lo que estás pidiendo no existe.
 
 ```javascript
-console.log(variableInexistente); // undefined
+console.log(variableInexistente); // undef
+ined
 ```
 
 `null` es un objeto que nosotros, los desarrolladores, establecemos cuando queremos decirles a otros desarrolladores que el elemento que están buscando existe, pero no hay ningún valor asociado con él. Mientras que `undefined` está configurado por Javascript,` null` está configurado por un desarrollador. Si alguna vez recibes `null`, debes saber que otro desarrollador estableció ese valor en` null`
@@ -56,6 +58,7 @@ true
 [] // Un array, aprenderemos más sobre esto más adelante
 {} // Un objeto, aprenderemos más sobre esto más adelante
 function() {}
+
 
 // Datos que son forzados a falsos/"false"
 false
