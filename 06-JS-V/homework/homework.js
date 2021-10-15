@@ -8,18 +8,18 @@ function crearUsuario() {
   // {{nombre}} debe ser el nombre definido en cada instancia
   // Devuelve la clase
   // Tu código:
-  function Usuario (usuario,nombre,email,password)
+  function Usuario (opciones)
   {
-    opciones.call(usuario,nombre,email,password);
-    this.usuario = usuario;
-    this.nombre = nombre;
-    this.email = email;
-    this.password = password; 
+    this.usuario = opciones.usuario;
+    this.nombre = opciones.nombre;
+    this.email = opciones.email;
+    this.password = opciones.password; 
   }
   Usuario.prototype.saludar = function ()
   {
-    return "Hola mi nombre es" + " " + this.nombre;
-  } 
+    return "Hola, mi nombre es" + " " + this.nombre;
+  };
+  return Usuario; 
 }
 
 function agregarMetodoPrototype(Constructor) {
@@ -27,7 +27,9 @@ function agregarMetodoPrototype(Constructor) {
   // El método debe llamarse "saludar" y debe devolver la string "Hello World!"
   // Tu código:
   var obj = {};
-  Contructor.assign(function saludar(){return "Hello World";})
+  Constructor.prototype.saludar= function (){
+    return "Hello World!";
+  };
 }
 
 function agregarStringInvertida() {
@@ -36,23 +38,15 @@ function agregarStringInvertida() {
   // Ej: 'menem'.reverse() => menem
   // 'toni'.reverse() => 'inot'
   // Pista: Necesitarás usar "this" dentro de "reverse"
-  String.prototype.invrt() = function reverse (palabra)
-  {
-    var a = palabra.length;
-    var x = [a];
-
-    for (var i = o; i < a; i++)
+  String.prototype.reverse = function (){
+    var a = this.length - 1;
+    var o = "";
+    for(var i = a; i >= 0; i--)
     {
-      x[i] = palabra.charAt(i);
+      o = o + this.charAt(i);
     }
-
-    this.palabra = x[a-1];
-
-    for(var i = a - 2; i = 0; i--)
-    {
-      this.palabra = this.palabra + x[i];
-    }
-  }
+    return o;
+  };
 }
 
 // ---------------------------------------------------------------------------//
@@ -86,7 +80,6 @@ function crearInstanciaPersona(nombre, apellido, edad, dir) {
   //Con esta función vamos a crear una nueva persona a partir de nuestro constructor de persona (creado en el ejercicio anterior)
   //Recibirá los valores "Juan", "Perez", 22, "Saavedra 123" para sus respectivas propiedades
   //Devolver la nueva persona creada
-  Persona.call(nombre,apellido,edad,domicilio);
   var a = new Persona(nombre, apellido, edad, dir);
   return a;
 }
@@ -94,16 +87,9 @@ function crearInstanciaPersona(nombre, apellido, edad, dir) {
 function agregarMetodo() {
   //La función agrega un método "datos" a la clase Persona que toma el nombre y la edad de la persona y devuelve: 
   //Ej: "Juan, 22 años"
-  Persona.call(nombre, apellido, edad, domicilio);
-  function datos (nombre,edad)
-  {
-    return nombre + "," + " " + edad;
-  }
-  Object.setPrototypeOf(Persona.prototype, datos);
-
-  var a = new Persona(nombre,edad);
-  a.datos();
-  return a;
+  Persona.prototype.datos = function(){
+    return this.nombre + "," + " " + this.edad + " " + "años";
+  };
 }
   
 
