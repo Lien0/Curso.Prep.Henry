@@ -83,7 +83,7 @@ function filter(array) {
   // for (var i = 0; i < a; i++) 
   //  if(array[i].charAT(0) === "a")
   //    array2.push(array[i]);
-  //
+  //   
   //return array2;
 }
 
