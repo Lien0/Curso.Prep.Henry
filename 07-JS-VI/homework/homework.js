@@ -4,8 +4,7 @@ function mayuscula(nombre) {
   //La función recibe un nombre y debe devolver el mismo que recibe pero con su primer letra en mayúscula
   //ej: Recibe "mario" ----> Devuelve "Mario"
   //Tu código:
-  nombre[0].toUpperCase();
-  return nombre;
+  return nombre[0].toUpperCase() + nombre.slice(1);
 }
 
 function invocarCallback(cb) {
@@ -26,23 +25,9 @@ function sumarArray(numeros, cb) {
   // Pasa el resultado a `cb`
   // No es necesario devolver nada
   //Tu código:
-  var a = esEntero(numero);
-
-  if (a === true)
-  {
-    cb(numeros);
-  }
+    var suma = numeros.reduce(function(acc,sacc){return sacc + acc;},0);
+    cb(suma);
   
-
-  function esEntero(numero)
-  {
-   var a = Math.floor(numero);
-   if(a === numero)
-   {
-     return true;
-   }
-   return false;
-  }
 }
 
 function forEach(array, cb) {
@@ -61,6 +46,7 @@ function map(array, cb) {
   var a = array.length;
   var x = [a];
   for(i = 0; i < a; i++){x[i] = cb(array[i]);}
+    return x;
 }
 
 function filter(array) {
@@ -68,13 +54,37 @@ function filter(array) {
   //Devolver un nuevo array con los elementos que cumplen la condición
   //Tu código:
   var a = array.length;
-  var x = [a]
-  for(var i = 0; i < a; i++)
+  var o = 0;
+  var n = 0;
+
+  for (var i = 0; i < a; i++)
   {
-    if(array[i].charAt(0) === "a") x[i] = array[i + 1];
-    else x[i] = array[i];
+    if(array[i].charAt(0) === "a") o++;
+  }
+
+  var x = [o];
+
+  for(i = 0; i < o; i++)
+  {
+    for(var j = n; j < a; j++)
+    {
+     if(array[j].charAt(0) === "a") 
+      {
+        x[i] = array[j];
+        n = j + 1;
+        break;
+      }
+    }
   }
   return x; 
+
+  // var array2 = [];
+  //
+  // for (var i = 0; i < a; i++) 
+  //  if(array[i].charAT(0) === "a")
+  //    array2.push(array[i]);
+  //
+  //return array2;
 }
 
 // No modificar nada debajo de esta línea
