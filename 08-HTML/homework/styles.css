@@ -1,0 +1,7 @@
+		#thirdDiv {width: 500px; height: 600px; background: coral; padding: 50px; border: 20px dotted grey;}
+		 html {background-color: green; width: 600px; margin: auto;}
+	      div {width: 600px; margin: auto;}
+		.divClass {}
+          #spanId{font-size: 18px; margin: 10px;}
+		h1 {color: lightblue; background-image: url("../img/blue.jpg");}
+		img {width: 400px; height: 300px;}
